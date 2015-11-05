@@ -1,8 +1,11 @@
 {
-  "config": {
-  },
+  "config": {},
   "scripts": {
+    "test": "node_modules/.bin/mocha ./tests/test"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
   }
 }
