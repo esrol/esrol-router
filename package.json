@@ -1,7 +1,7 @@
 {
   "config": {},
   "scripts": {
-    "test": "node_modules/.bin/mocha ./tests/test"
+    "test": "node_modules/.bin/mocha ./tests/*.js"
   },
   "dependencies": {
     "errors": "^0.3.0"
