@@ -3,7 +3,9 @@
   "scripts": {
     "test": "node_modules/.bin/mocha ./tests/test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "errors": "^0.3.0"
+  },
   "devDependencies": {
     "chai": "^3.4.0",
     "mocha": "^2.3.3"
