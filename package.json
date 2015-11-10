@@ -4,7 +4,8 @@
     "test": "node_modules/.bin/mocha ./tests/*.js"
   },
   "dependencies": {
-    "errors": "^0.3.0"
+    "errors": "^0.3.0",
+    "xena-errors": "^0.1.0"
   },
   "devDependencies": {
     "chai": "^3.4.0",
