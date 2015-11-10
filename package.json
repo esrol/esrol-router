@@ -1,4 +1,25 @@
 {
+  "name": "xena-router",
+  "description": "Later",  
+  "main": "index.js",
+  "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ivaylopivanov/xena-router"
+  },
+  "bugs": {
+    "url": "https://github.com/ivaylopivanov/xena-router"
+  },  
+  "version": "0.0.1",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ivaylopivanov/xena-router/LICENSE"
+    }
+  ],  
+  "engines": {
+    "node": ">= 4.0.0"
+  },    
   "config": {},
   "scripts": {
     "test": "node_modules/.bin/mocha ./tests/*.js"
