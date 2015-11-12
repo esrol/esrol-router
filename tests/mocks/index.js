@@ -22,8 +22,9 @@ module.exports = {
   },
   routes: {
     helloWorld: helloWorldRoute,
+    missingUrlProperty: missingUrlPropertyRoute,
     oneMethod: oneMethodRoute,
     getQueryParams: getQueryParamsRoute,
     missingMethods: missingMethodsRoute
   }
-}
+};

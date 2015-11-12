@@ -1,6 +1,7 @@
 {
   "name": "xena-router",
   "description": "Later",  
+  "version": "0.0.1",
   "main": "index.js",
   "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
   "repository": {
@@ -10,13 +11,8 @@
   "bugs": {
     "url": "https://github.com/ivaylopivanov/xena-router"
   },  
-  "version": "0.0.1",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/ivaylopivanov/xena-router/LICENSE"
-    }
-  ],  
+  "license": "MIT",
+  "keywords": [],  
   "engines": {
     "node": ">= 4.0.0"
   },    
@@ -26,7 +22,7 @@
   },
   "dependencies": {
     "errors": "^0.3.0",
-    "xena-errors": "^0.1.0"
+    "xena-errors": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^3.4.0",

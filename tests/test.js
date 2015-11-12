@@ -9,7 +9,7 @@ describe('Api Success...', () => {
   describe('setSupportedHttpMethods', () => {
     it('Should return true', () => {
       expect(router.setSupportedHttpMethods(['get', 'post', 'put', 'delete']))
-      .to.equal(true)
+      .to.equal(true);
     });
   });
 
@@ -157,7 +157,7 @@ describe('Api Fail...', () => {
 
   describe('registerRoute with missing "url" property', () => {
     it(should, () => {
-      let route = mocks.routes.missingUrlPropertyRoute;
+      let route = mocks.routes.missingUrlProperty;
       expect(() => router.registerRoute(route)).to.throw(Error); 
     });
   });

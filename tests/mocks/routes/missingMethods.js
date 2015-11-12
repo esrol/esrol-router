@@ -1,4 +1,4 @@
 'use strict';
 module.exports = {
-  url: '/missing-methods',
+  url: '/missing-methods'
 };
