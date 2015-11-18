@@ -1,15 +1,15 @@
 {
-  "name": "xena-router",
+  "name": "esrol-router",
   "description": "Later",  
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ivaylopivanov/xena-router"
+    "url": "git://github.com/esrol/esrol-router"
   },
   "bugs": {
-    "url": "https://github.com/ivaylopivanov/xena-router"
+    "url": "https://github.com/esrol/esrol-router"
   },  
   "license": "MIT",
   "keywords": [],  
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "errors": "^0.3.0",
-    "xena-errors": "^0.3.0"
+    "esrol-errors": "^0.3.4"
   },
   "devDependencies": {
     "chai": "^3.4.0",

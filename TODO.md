@@ -3,7 +3,7 @@
 - [x] Build
 - [x] Tests
 - [x] Example
-- [ ] Implement error numbers using xena-errors
+- [x] Implement error numbers using esrol-errors
 - [ ] Coverage
 - [ ] Update readme
 - [ ] Update version
