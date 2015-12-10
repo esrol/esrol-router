@@ -12,7 +12,6 @@ describe('Api Success...', () => {
       .to.equal(true);
     });
   });
-    
 
   describe('registerRoute', () => {
     it('Should return true on registered route', () => {
@@ -34,33 +33,35 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for multiple records "/hello-world', () => {
-    it('Should return "hello-world"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/hello-world';
-      expect(router.onRequest(req, res)).to.equal('hello-world');
+  describe('Using default middleware', () => {
+    describe('onRequest for multiple records "/hello-world"', () => {
+      it('Should return "hello-world"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/hello-world';
+        expect(router.onRequest(req, res)).to.equal('hello-world');
+      });
+    });
+
+    describe('onRequest for multiple records "/hello-world/"', () => {
+      it('Should return "hello-world"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/hello-world/';
+        expect(router.onRequest(req, res)).to.equal('hello-world');
+      });
+    });
+
+    describe('onRequest for signle record like "/hello-world/foo"', () => {
+      it('Should return "foo"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/hello-world/foo';
+        expect(router.onRequest(req, res)).to.equal('foo');
+      });
     });
   });
 
-  describe('onRequest for multiple records "/hello-world/', () => {
-    it('Should return "hello-world"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/hello-world/';
-      expect(router.onRequest(req, res)).to.equal('hello-world');
-    });
-  });
-
-  describe('onRequest for signle record like "/hello-world/foo"', () => {
-    it('Should return "foo"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/hello-world/foo';
-      expect(router.onRequest(req, res)).to.equal('foo');
-    });
-  });
-    
   describe('setMiddleware', () => {
     it('Should return true', () => {
       let middleware = mocks.middlewares.simpleMiddleware;
@@ -85,7 +86,7 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for multiple records "/hello-world', () => {
+  describe('onRequest for multiple records "/hello-world"', () => {
     it('Should return "hello-world"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
@@ -94,7 +95,7 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for multiple records "/hello-world/', () => {
+  describe('onRequest for multiple records "/hello-world/"', () => {
     it('Should return "hello-world"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
@@ -159,29 +160,32 @@ describe('Api Success...', () => {
 
   let des = 'onRequest for multiple records "/query-params?name=foo&ages=bar';
   describe(des, () => {
-    it('Should return the queryString value "name=foo&ages=bar"', () => {
+    it('Should return object "{name: "foo", ages: "bar"}"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
       req.url = '/query-params?name=foo&ages=bar';
-      expect(router.onRequest(req, res)).to.equal('name=foo&ages=bar');
+      let result = router.onRequest(req, res);
+      expect(result).to.be.an('object');
+      expect(result.name).to.equal('foo');
+      expect(result.ages).to.equal('bar');
     });
   });
 
-  describe('onRequest for multiple records "/query-params?', () => {
-    it('Should return the queryString value ""', () => {
+  describe('onRequest for multiple records "/query-params?"', () => {
+    it('Should return object "{}"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
       req.url = '/query-params?';
-      expect(router.onRequest(req, res)).to.equal('');
+      expect(router.onRequest(req, res)).to.be.an('object');
     });
   });
 
-  describe('onRequest for multiple records "/query-params', () => {
-    it('Should return the queryString value ""', () => {
+  describe('onRequest for multiple records "/query-params"', () => {
+    it('Should return object "{}"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
       req.url = '/query-params';
-      expect(router.onRequest(req, res)).to.equal('');
+      expect(router.onRequest(req, res)).to.be.an('object');
     });
   });
 
@@ -209,14 +213,14 @@ describe('Api Fail...', () => {
       expect(() => router.registerRoute(route)).to.throw(Error);
     });
   });
-    
+
   describe('registerRoute with missing "route" object', () => {
     it(should, () => {
       let route = mocks.routes.missingUrlProperty;
       expect(() => router.registerRoute()).to.throw(Error);
     });
   });
-    
+
   describe('registerRoute with missing methods', () => {
     it(should, () => {
       let route = mocks.routes.missingMethods;

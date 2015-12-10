@@ -2,6 +2,6 @@
 module.exports = {
   url: '/query-params',
   getMultipleRecords: function(req, res) {
-    return req.queryString;
+    return req.query;
   }
 };
