@@ -8,7 +8,7 @@ let route = {
     return res.end('posts');
   },
   getSingleRecord: function(req, res) {
-    return res.end(req.record);    
+    return res.end(req.record);
   }
 };
 router.setSupportedHttpMethods(['GET']);

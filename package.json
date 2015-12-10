@@ -1,30 +1,42 @@
 {
   "name": "esrol-router",
-  "description": "Later",  
+  "description": "Later",
   "version": "0.0.3",
   "main": "index.js",
-  "author": "Ivaylo Ivanov <Ivchoyyyy@gmail.com>",
+  "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/esrol/esrol-router"
   },
   "bugs": {
     "url": "https://github.com/esrol/esrol-router"
-  },  
+  },
   "license": "MIT",
-  "keywords": [],  
+  "keywords": [
+    "esrol",
+    "routing",
+    "route",
+    "routes",
+    "router",
+    "handling"
+  ],
   "engines": {
     "node": ">= 4.0.0"
-  },    
+  },
   "config": {},
   "scripts": {
-    "test": "node_modules/.bin/mocha ./tests/*.js"
+    "test": "node_modules/.bin/mocha ./tests/*.js",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha ./tests/test",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "errors": "^0.3.0",
     "esrol-errors": "^0.3.4"
   },
   "devDependencies": {
+    "debug": "^2.2.0",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.4.1",
     "chai": "^3.4.0",
     "mocha": "^2.3.3"
   }

@@ -6,5 +6,5 @@ module.exports = {
   },
   getSingleRecord: function(req, res) {
     return req.record;
-  }    
+  }
 };
