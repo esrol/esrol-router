@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  url: '/hello-world',
+  url: '/fourOhFour',
   getMultipleRecords: function(req, res) {
-    return 'hello-world';
+    return 404;
   },
   getSingleRecord: function(req, res) {
     return req.record;

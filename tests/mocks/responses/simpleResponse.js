@@ -4,7 +4,6 @@ module.exports = {
   end: function() {
     let statusCode = this.statusCode;
     this.statusCode = undefined;
-    return statusCode;  
+    return statusCode;
   }
 };
-    

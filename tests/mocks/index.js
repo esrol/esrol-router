@@ -1,6 +1,8 @@
 'use strict';
 let helloWorldRoute = require('./routes/helloWorld');
+let fourOhFourRoute = require('./routes/fourOhFour');
 let oneMethodRoute = require('./routes/oneMethod');
+let reqandresMethodRoute = require('./routes/reqandresMethod');
 let missingUrlPropertyRoute = require('./routes/missingUrlProperty');
 let missingMethodsRoute = require('./routes/missingMethods');
 let getQueryParamsRoute = require('./routes/getQueryParams');
@@ -22,9 +24,14 @@ module.exports = {
   },
   routes: {
     helloWorld: helloWorldRoute,
+    fourOhFour: fourOhFourRoute,
     missingUrlProperty: missingUrlPropertyRoute,
     oneMethod: oneMethodRoute,
+    reqandresMethod: reqandresMethodRoute,
     getQueryParams: getQueryParamsRoute,
     missingMethods: missingMethodsRoute
+  },
+  servers: {
+    // simpleServer: simpleServer
   }
 };
