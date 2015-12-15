@@ -18,5 +18,5 @@ http.createServer((req, res) => {
   router.onRequest(req, res);
 }).listen(3333);
 
-// localhost:3333/posts
-// localhost:3333/posts/1
+//curl localhost:3333/posts
+//curl localhost:3333/posts/1
