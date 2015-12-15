@@ -141,16 +141,6 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for signle record that doesn\'t exist like "/bar/foo"',
-    () => {
-    it('Should return "404"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/bar/foo';
-      expect(router.onRequest(req, res)).to.equal(404);
-    });
-  });
-
   let des = 'onRequest for multiple records "/query-params?name=foo&ages=bar';
   describe(des, () => {
     it('Should return object "{name: "foo", ages: "bar"}"', () => {

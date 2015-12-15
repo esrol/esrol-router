@@ -2,10 +2,8 @@
 
 module.exports = {
   url: '/fourOhFour',
-  getMultipleRecords: function(req, res) {
-    return 404;
+  all: function(req, res) {
+    res.statusCode = 404;
+    res.end('fourOhFour');
   },
-  getSingleRecord: function(req, res) {
-    return req.record;
-  }
 };

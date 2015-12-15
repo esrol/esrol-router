@@ -28,4 +28,14 @@ describe('Request properties', () => {
     });
   });
 
+  describe('On http get request to /missing-route', () => {
+    it('Should return 404 from "fourOhFour" route', (done) => {
+      request('http://localhost:3333/missing-route', (error, result) => {
+        expect(result.statusCode).to.equal(404);
+        expect(result.body).to.equal('fourOhFour');
+        done();
+      });
+    });
+  });
+
 });
