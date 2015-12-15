@@ -2,7 +2,7 @@
 let helloWorldRoute = require('./routes/helloWorld');
 let fourOhFourRoute = require('./routes/fourOhFour');
 let oneMethodRoute = require('./routes/oneMethod');
-let reqandresMethodRoute = require('./routes/reqandresMethod');
+let reqMethodRoute = require('./routes/reqMethod');
 let missingUrlPropertyRoute = require('./routes/missingUrlProperty');
 let missingMethodsRoute = require('./routes/missingMethods');
 let getQueryParamsRoute = require('./routes/getQueryParams');
@@ -27,7 +27,7 @@ module.exports = {
     fourOhFour: fourOhFourRoute,
     missingUrlProperty: missingUrlPropertyRoute,
     oneMethod: oneMethodRoute,
-    reqandresMethod: reqandresMethodRoute,
+    reqMethod: reqMethodRoute,
     getQueryParams: getQueryParamsRoute,
     missingMethods: missingMethodsRoute
   },
