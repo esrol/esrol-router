@@ -8,12 +8,14 @@ let missingMethodsRoute = require('./routes/missingMethods');
 let getQueryParamsRoute = require('./routes/getQueryParams');
 let simpleMiddleware = require('./middlewares/simpleMiddleware');
 let lessParamsMiddleware = require('./middlewares/lessParams');
+let reqProperties = require('./requests/req-properties');
 let simpleRequest = require('./requests/simpleRequest');
 let simpleResponse = require('./responses/simpleResponse');
 
 module.exports = {
   requests: {
-    simpleRequest: simpleRequest
+    reqProperties: reqProperties,
+    simpleRequest: simpleRequest,
   },
   responses: {
     simpleResponse: simpleResponse

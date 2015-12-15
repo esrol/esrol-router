@@ -28,14 +28,14 @@ describe('Api Success...', () => {
 
   describe('registerRoute', () => {
     it('should return true when new route has been registered', () => {
-      let route = mocks.routes.getQueryParams;
-      expect(router.registerRoute(route)).to.equal(true);
+      expect(router.registerRoute(mocks.routes.getQueryParams)).to.equal(true);
+      expect(router.registerRoute(mocks.requests.reqProperties)).to.equal(true);
     });
   });
 
   describe('getRoutesLength', () => {
-    it('should return number of routes (2 so far)', () => {
-      expect(router.getRoutesLength()).to.equal(2);
+    it('should return number of routes (3 so far)', () => {
+      expect(router.getRoutesLength()).to.equal(3);
     });
   });
 
