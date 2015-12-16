@@ -6,36 +6,37 @@ let router = new Router();
 
 describe('Api Success...', () => {
 
-  describe('setSupportedHttpMethods', () => {
-    it('Should return true', () => {
+  describe('On "setSupportedHttpMethods"', () => {
+    it('Should return "true"', () => {
       expect(router.setSupportedHttpMethods(['get', 'post', 'put', 'delete']))
       .to.equal(true);
     });
   });
 
-  describe('registerRoute', () => {
+  describe('On registerRoute', () => {
     it('should return true when new route has been registered', () => {
       let route = mocks.routes.helloWorld;
       expect(router.registerRoute(route)).to.equal(true);
     });
   });
 
-  describe('getRoutesLength', () => {
+  describe('On getRoutesLength', () => {
     it('should return number of routes (1 so far)', () => {
       expect(router.getRoutesLength()).to.equal(1);
     });
   });
 
-  describe('registerRoute', () => {
+  describe('On registerRoute', () => {
     it('should return true when new route has been registered', () => {
       expect(router.registerRoute(mocks.routes.getQueryParams)).to.equal(true);
       expect(router.registerRoute(mocks.requests.reqProperties)).to.equal(true);
+      expect(router.registerRoute(mocks.responses.response)).to.equal(true);
     });
   });
 
-  describe('getRoutesLength', () => {
-    it('should return number of routes (3 so far)', () => {
-      expect(router.getRoutesLength()).to.equal(3);
+  describe('On getRoutesLength', () => {
+    it('should return number of routes (4 so far)', () => {
+      expect(router.getRoutesLength()).to.equal(4);
     });
   });
 
@@ -82,14 +83,14 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('registerRoute', () => {
+  describe('On registerRoute', () => {
     it('should return true when new route has been registered', () => {
       let route = mocks.routes.reqMethod;
       expect(router.registerRoute(route)).to.equal(true);
     });
   });
 
-  describe('onRequest for signle record like "/req-method/foo"', () => {
+  describe('"onRequest" for signle record like "/req-method/foo"', () => {
     it('Should return the path property - "/req-method/foo"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
@@ -98,7 +99,7 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for multiple records "/hello-world/"', () => {
+  describe('"onRequest" for multiple records "/hello-world/"', () => {
     it('Should return "hello-world"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
@@ -107,7 +108,7 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for signle record like "/hello-world/foo"', () => {
+  describe('"onRequest" for signle record like "/hello-world/foo"', () => {
     it('Should return "foo"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
@@ -116,8 +117,8 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for multiple records "/foo"', () => {
-    it('Should return statusCode 404', () => {
+  describe('"onRequest" for multiple records "/foo" - not existing', () => {
+    it('Should return statusCode "404"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
       req.url = '/foo';
@@ -125,8 +126,8 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('onRequest for signle record "/foo/bar', () => {
-    it('Should return statusCode 404', () => {
+  describe('"onRequest" for signle record "/foo/bar" - not existing', () => {
+    it('Should return statusCode "404"', () => {
       let req = mocks.requests.simpleRequest;
       let res = mocks.responses.simpleResponse;
       req.url = '/foo/bar';
@@ -134,79 +135,84 @@ describe('Api Success...', () => {
     });
   });
 
-  describe('registerRoute', () => {
+  describe('On "registerRoute"', () => {
     it('should return true when new route has been registered', () => {
       let route = mocks.routes.fourOhFour;
       expect(router.registerRoute(route)).to.equal(true);
     });
   });
 
-  let des = 'onRequest for multiple records "/query-params?name=foo&ages=bar';
-  describe(des, () => {
-    it('Should return object "{name: "foo", ages: "bar"}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params?name=foo&ages=bar';
-      let result = router.onRequest(req, res);
-      expect(result).to.be.an('object');
-      expect(result.name).to.equal('foo');
-      expect(result.ages).to.equal('bar');
-    });
-  });
+  describe('Testing query params object', () => {
 
-  describe('onRequest for multiple records "/query-params?"', () => {
-    it('Should return object "{}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params?';
-      expect(router.onRequest(req, res)).to.be.an('object');
+    let des = '"onRequest" for multiple records "/query-params?name=foo&ages=bar';
+    describe(des, () => {
+      it('Should return object "{name: "foo", ages: "bar"}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params?name=foo&ages=bar';
+        let result = router.onRequest(req, res);
+        expect(result).to.be.an('object');
+        expect(result.name).to.equal('foo');
+        expect(result.ages).to.equal('bar');
+      });
     });
-  });
 
-  describe('onRequest for multiple records "/query-params"', () => {
-    it('Should return object "{}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params';
-      expect(router.onRequest(req, res)).to.be.an('object');
+    describe('"onRequest" for multiple records "/query-params?"', () => {
+      it('Should return object "{}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params?';
+        expect(router.onRequest(req, res)).to.be.an('object');
+      });
     });
-  });
 
-  des = 'onRequest for multiple records "/query-params?name=foo&ages=bar';
-  describe(des, () => {
-    it('Should return object "{name: "foo", ages: "bar"}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params?name=foo&ages=bar';
-      let result = router.onRequest(req, res);
-      expect(result).to.be.an('object');
-      expect(result.name).to.equal('foo');
-      expect(result.ages).to.equal('bar');
+    describe('"onRequest" for multiple records "/query-params"', () => {
+      it('Should return object "{}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params';
+        expect(router.onRequest(req, res)).to.be.an('object');
+      });
     });
-  });
 
-  describe('onRequest for multiple records "/query-params?"', () => {
-    it('Should return object "{}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params?';
-      expect(router.onRequest(req, res)).to.be.an('object');
+    des = '"onRequest" for multiple records "/query-params?name=foo&ages=bar';
+    describe(des, () => {
+      it('Should return object "{name: "foo", ages: "bar"}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params?name=foo&ages=bar';
+        let result = router.onRequest(req, res);
+        expect(result).to.be.an('object');
+        expect(result.name).to.equal('foo');
+        expect(result.ages).to.equal('bar');
+      });
     });
-  });
 
-  describe('onRequest for multiple records "/query-params"', () => {
-    it('Should return object "{}"', () => {
-      let req = mocks.requests.simpleRequest;
-      let res = mocks.responses.simpleResponse;
-      req.url = '/query-params';
-      expect(router.onRequest(req, res)).to.be.an('object');
+    describe('"onRequest" for multiple records "/query-params?"', () => {
+      it('Should return object "{}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params?';
+        expect(router.onRequest(req, res)).to.be.an('object');
+      });
     });
+
+    describe('"onRequest" for multiple records "/query-params"', () => {
+      it('Should return object "{}"', () => {
+        let req = mocks.requests.simpleRequest;
+        let res = mocks.responses.simpleResponse;
+        req.url = '/query-params';
+        expect(router.onRequest(req, res)).to.be.an('object');
+      });
+    });
+
   });
 
 });
 
 
 describe('Api Fail...', () => {
+
   let should = 'Should throw an error';
 
   describe('setMiddleware with non function as param', () => {

@@ -11,6 +11,7 @@ let lessParamsMiddleware = require('./middlewares/lessParams');
 let reqProperties = require('./requests/req-properties');
 let simpleRequest = require('./requests/simpleRequest');
 let simpleResponse = require('./responses/simpleResponse');
+let response = require('./responses/response');
 
 module.exports = {
   requests: {
@@ -18,7 +19,8 @@ module.exports = {
     simpleRequest: simpleRequest,
   },
   responses: {
-    simpleResponse: simpleResponse
+    simpleResponse: simpleResponse,
+    response: response
   },
   middlewares: {
     simpleMiddleware: simpleMiddleware,
@@ -32,8 +34,5 @@ module.exports = {
     reqMethod: reqMethodRoute,
     getQueryParams: getQueryParamsRoute,
     missingMethods: missingMethodsRoute
-  },
-  servers: {
-    // simpleServer: simpleServer
   }
 };

@@ -1,11 +1,10 @@
 'use strict';
 let expect = require('chai').expect;
 let Router = require('../index.js');
-let route = require('./mocks/requests/req-properties');
 let router = new Router();
 let http = require('http');
 let request = require('request');
-http.createServer((req, res) => {
+let server = http.createServer((req, res) => {
   router.onRequest(req, res);
 }).listen(3333);
 
