@@ -1,4 +1,6 @@
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] 
+[![Build Status][travis-image]][travis-url] 
+[![Test coverage][coveralls-image]][coveralls-url]
 
 # esrol-router
 This is the main class Api of the esrol-routers module. Here you can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middlewares.
@@ -166,9 +168,7 @@ Handle a request and route it to the required router.
 
 [npm-image]: https://badge.fury.io/js/esrol-router.svg
 [npm-url]: https://npmjs.org/package/esrol-router
-[travis-image]: https://travis-ci.org/ivaylopivanov/esrol-router.svg?branch=master
-[travis-url]: https://travis-ci.org/ivaylopivanov/esrol-router
-[daviddm-image]: https://david-dm.org/ivaylopivanov/esrol-router.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/ivaylopivanov/esrol-router
-[coveralls-image]: https://coveralls.io/repos/ivaylopivanov/esrol-router/badge.svg
-[coveralls-url]: https://coveralls.io/r/ivaylopivanov/esrol-router
+[travis-image]: https://travis-ci.org/esrol/esrol-router.svg?branch=master
+[travis-url]: https://travis-ci.org/esrol/esrol-router
+[coveralls-image]: https://coveralls.io/repos/esrol/esrol-router/badge.svg
+[coveralls-url]: https://coveralls.io/r/esrol/esrol-router
