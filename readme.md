@@ -64,9 +64,6 @@ http.createServer((req, res) => {
 </dl>
 <a name="Api"></a>
 ## Api
-**Kind**: global class  
-**Access:** public  
-**Author:** Ivaylo Ivanov  
 <a name="new_Api_new"></a>
 ### new Api()
 This is the main class Api of the esrol-routers module.
@@ -78,13 +75,11 @@ set middlewares.
 ## registerRoute(route) ⇒ <code>boolean</code>
 Register a route.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true - returns true if registering was successful  
 **Throws**:
 
 - <code>error</code> - throws error if thrown by registerRoute in Routes
 
-**Access:** public  
 **See**: [registerRoute](registerRoute)  
 
 | Param | Type | Description |
@@ -95,18 +90,14 @@ Register a route.
 ## getRoutesLength() ⇒ <code>int</code>
 Get the ammount of registered routes.
 
-**Kind**: global function  
 **Returns**: <code>int</code> - - ammount of registered routes  
-**Access:** public  
 **See**: [getRoutesLength](#getRoutesLength)  
 <a name="getRouteMethodsLength"></a>
 ## getRouteMethodsLength(url) ⇒ <code>int</code>
 Get the length of the methods in the route.
 
-**Kind**: global function  
 **Returns**: <code>int</code> - 0 or integer - returns 0 if there are no set routes,
 or an integer number  
-**Access:** public  
 **See**: [getRouteMethodsLength](#getRouteMethodsLength)  
 
 | Param | Type | Description |
@@ -117,7 +108,6 @@ or an integer number
 ## setSupportedHttpMethods(methods) ⇒ <code>boolean</code>
 Set the supported http methods.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true - returns true on success  
 **Throws**:
 
@@ -134,13 +124,11 @@ Set the supported http methods.
 ## setMiddleware(middleware) ⇒ <code>boolean</code>
 Initialise middlewares.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true  
 **Throws**:
 
 - <code>error</code> error - if thrown by setMiddleware
 
-**Access:** public  
 **See**: [setMiddleware](#setMiddleware)  
 
 | Param | Type | Description |
@@ -151,15 +139,85 @@ Initialise middlewares.
 ## onRequest(req, res) ⇒ <code>object</code>
 Handle a request and route it to the required router.
 
-**Kind**: global function  
 **Returns**: <code>object</code> - middleware - returns the instantiated middleware  
-**Access:** public  
 **See**: [onRequest](#onRequest)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | req | <code>object</code> | request |
 | res | <code>object</code> | response |
+
+
+## Modules
+<dl>
+<dt><a href="#module_Response">Response</a></dt>
+<dt><a href="#module_Request">Request</a></dt>
+<dd></dd>
+</dl>
+<a name="module_Response"></a>
+## Response
+The response object represents the HTTP response that an Express app
+sends when it gets an HTTP request.
+Using express response for reference
+
+**See**: [https://github.com/strongloop/express/blob/master/lib/response.js](https://github.com/strongloop/express/blob/master/lib/response.js)  
+
+* [Response](#module_Response)
+  * [~status(code)](#module_Response..status) ⇒ <code>ServerResponse</code>
+  * [~json(obj)](#module_Response..json)
+  * [~redirect()](#module_Response..redirect)
+
+<a name="module_Response..res"></a>
+### Response~res
+Response prototype.
+
+<a name="module_Response..status"></a>
+### Response~status(code) ⇒ <code>ServerResponse</code>
+Set status `code`.
+
+| Param | Type |
+| --- | --- |
+| code | <code>Number</code> | 
+
+<a name="module_Response..json"></a>
+### Response~json(obj)
+Send JSON response.
+
+Examples:
+
+    res.json(null);
+    res.json({ foo: 'bar' });
+
+| Param | Type |
+| --- | --- |
+| obj | <code>string</code> &#124; <code>number</code> &#124; <code>boolean</code> &#124; <code>object</code> | 
+
+<a name="module_Response..redirect"></a>
+### Response~redirect(url)
+Redirect to the given `url` with status 302
+
+Examples:
+
+    res.redirect('/foo/bar');
+    res.redirect('http://example.com');
+
+| Param | Type |
+| --- | --- |
+| url | <code>string</code> |
+
+<a name="module_Request"></a>
+## Request
+The request object represents the HTTP request
+Using express request for reference
+
+**See**: [https://github.com/strongloop/express/blob/master/lib/request.js](https://github.com/strongloop/express/blob/master/lib/request.js)  
+<a name="module_Request..req"></a>
+### Request~req
+Request prototype.
+
+* [Request](#module_Request)
+  * [path](#module_Request..path) => <code>string</code> requested path
+  * [xhr](#module_Request..xhr) => <code>boolean</code> Check if the request was an _XMLHttpRequest_
 
 ## License
 
