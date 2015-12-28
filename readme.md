@@ -3,8 +3,9 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 
 # esrol-router
-You can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middleware.
+You can create new routes, set allowed ways of reaching them, handle request, get information regarding those routes, and set middleware.
 
+*Part of [Esrol](https://github.com/esrol/esrol)*
 
 ## Installation
 
@@ -46,7 +47,7 @@ _Please see the <a href="https://github.com/esrol/esrol-server-app/wiki/Routes#r
 <dd><p>Get the ammount of registered routes.</p>
 </dd>
 <dt><a href="#getRouteMethodsLength">getRouteMethodsLength(url)</a> ⇒ <code>int</code></dt>
-<dd><p>Get the length of the methods in the route.</p>
+<dd><p>Get the methods number in the route.</p>
 </dd>
 <dt><a href="#setSupportedHttpMethods">setSupportedHttpMethods(methods)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Set the supported http methods.</p>
