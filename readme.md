@@ -3,7 +3,7 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 
 # esrol-router
-This is the main class Api of the esrol-routers module. Here you can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middlewares.
+You can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middleware.
 
 
 ## Installation
@@ -35,13 +35,9 @@ http.createServer((req, res) => {
   router.onRequest(req, res);
 }).listen(3333);
 ```
+_Please see the <a href="https://github.com/esrol/esrol-server-app/wiki/Routes#router" target="_blank">docs</a> here, for information how to structure your route_
 
-## Classes
-<dl>
-<dt><a href="#Api">Api</a></dt>
-<dd></dd>
-</dl>
-## Functions
+## Methods
 <dl>
 <dt><a href="#registerRoute">registerRoute(route)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Register a route.</p>
@@ -59,33 +55,19 @@ http.createServer((req, res) => {
 <dd><p>Initialise middlewares.</p>
 </dd>
 <dt><a href="#onRequest">onRequest(req, res)</a> ⇒ <code>object</code></dt>
-<dd><p>Handle a request and route it to the required router.</p>
+<dd><p>Handle a request and route it to the required route.</p>
 </dd>
 </dl>
-<a name="Api"></a>
-## Api
-**Kind**: global class  
-**Access:** public  
-**Author:** Ivaylo Ivanov  
-<a name="new_Api_new"></a>
-### new Api()
-This is the main class Api of the esrol-routers module.
-Here you can create new routes, set allowed ways of reaching them,
-handle responses, get information regarding those routes, and
-set middlewares.
 
 <a name="registerRoute"></a>
 ## registerRoute(route) ⇒ <code>boolean</code>
 Register a route.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true - returns true if registering was successful  
 **Throws**:
 
 - <code>error</code> - throws error if thrown by registerRoute in Routes
 
-**Access:** public  
-**See**: [registerRoute](registerRoute)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -95,19 +77,13 @@ Register a route.
 ## getRoutesLength() ⇒ <code>int</code>
 Get the ammount of registered routes.
 
-**Kind**: global function  
 **Returns**: <code>int</code> - - ammount of registered routes  
-**Access:** public  
-**See**: [getRoutesLength](#getRoutesLength)  
 <a name="getRouteMethodsLength"></a>
 ## getRouteMethodsLength(url) ⇒ <code>int</code>
-Get the length of the methods in the route.
+Get the methods number in the route.
 
-**Kind**: global function  
 **Returns**: <code>int</code> - 0 or integer - returns 0 if there are no set routes,
 or an integer number  
-**Access:** public  
-**See**: [getRouteMethodsLength](#getRouteMethodsLength)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -117,13 +93,11 @@ or an integer number
 ## setSupportedHttpMethods(methods) ⇒ <code>boolean</code>
 Set the supported http methods.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true - returns true on success  
 **Throws**:
 
 - <code>error</code> error - if thrown by setSupportedHttpMethods
 
-**Access:** public  
 **See**: [setSupportedHttpMethods](#setSupportedHttpMethods)  
 
 | Param | Type | Description |
@@ -134,14 +108,11 @@ Set the supported http methods.
 ## setMiddleware(middleware) ⇒ <code>boolean</code>
 Initialise middlewares.
 
-**Kind**: global function  
 **Returns**: <code>boolean</code> - true  
 **Throws**:
 
 - <code>error</code> error - if thrown by setMiddleware
 
-**Access:** public  
-**See**: [setMiddleware](#setMiddleware)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -151,20 +122,34 @@ Initialise middlewares.
 ## onRequest(req, res) ⇒ <code>object</code>
 Handle a request and route it to the required router.
 
-**Kind**: global function  
-**Returns**: <code>object</code> - middleware - returns the instantiated middleware  
-**Access:** public  
-**See**: [onRequest](#onRequest)  
+**Returns**: <code>mixed</code> - mixed - returns the value from the route // if returned  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | req | <code>object</code> | request |
 | res | <code>object</code> | response |
 
+## Contriubtion
+
+Any contribution will be highly appreciated. Just make sure that:
+
+1. Your code works.  
+2. You have 100% successful tests coverage.  
+3. You have comments in your code.  
+4. Follows eslint config. Exceptions are possible where that make sense.  
+
+## Tests
+
+  To run the test suite, first install the dependencies, then run `npm test`:
+
+```bash
+$ npm install
+$ npm test
+```
+
 ## License
 
 [MIT](https://github.com/esrol/esrol-router/blob/master/LICENSE)
-
 
 [npm-image]: https://badge.fury.io/js/esrol-router.svg
 [npm-url]: https://npmjs.org/package/esrol-router

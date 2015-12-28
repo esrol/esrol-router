@@ -1,7 +1,7 @@
 {
   "name": "esrol-router",
-  "description": "This is the main class Api of the esrol-routers module. Here you can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middlewares.",
-  "version": "0.0.3",
+  "description": "You can create new routes, set allowed ways of reaching them, handle responses, get information regarding those routes, and set middleware.",
+  "version": "0.0.4",
   "main": "index.js",
   "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "repository": {
