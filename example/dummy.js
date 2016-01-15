@@ -1,8 +1,8 @@
 'use strict';
-let Router = require('esrol-router');
-let http = require('http');
-let router = new Router();
-let route = {
+const Router = require('esrol-router');
+const http = require('http');
+const router = new Router();
+const route = {
   url: '/posts',
   getMultipleRecords: function(req, res) {
     return res.end('posts');

@@ -17,10 +17,10 @@ $ npm install --save esrol-router
 
 ```js
 'use strict';
-let Router = require('esrol-router');
-let http = require('http');
-let router = new Router();
-let route = {
+const Router = require('esrol-router');
+const http = require('http');
+const router = new Router();
+const route = {
   url: '/posts',
   getMultipleRecords: function(req, res) {
     return res.end('posts');
@@ -35,6 +35,9 @@ router.registerRoute(route);
 http.createServer((req, res) => {
   router.onRequest(req, res);
 }).listen(3333);
+
+//curl localhost:3333/posts
+//curl localhost:3333/posts/1
 ```
 _Please see the <a href="https://github.com/esrol/esrol-server-app/wiki/Routes#router" target="_blank">docs</a> here, for information how to structure your route_
 
