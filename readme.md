@@ -55,6 +55,9 @@ _Please see the <a href="https://github.com/esrol/esrol-server-app/wiki/Routes#r
 <dt><a href="#setSupportedHttpMethods">setSupportedHttpMethods(methods)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Set the supported http methods.</p>
 </dd>
+<dt><a href="#setNamespace">setNamespace(namespace)</a> ⇒ <code>boolean</code></dt>
+<dd><p>Set server namespace.</p>
+</dd>
 <dt><a href="#setMiddleware">setMiddleware(middleware)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Initialise middlewares.</p>
 </dd>
@@ -102,11 +105,20 @@ Set the supported http methods.
 
 - <code>error</code> error - if thrown by setSupportedHttpMethods
 
-**See**: [setSupportedHttpMethods](#setSupportedHttpMethods)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | methods | <code>array</code> | allowed http methods |
+
+<a name="setNamespace"></a>
+## setNamespace(namespace) ⇒ <code>boolean</code>
+Set server namespace eg 'v1' which will evaluate www.example.com/v1
+
+**Returns**: <code>boolean</code> - true   
+
+| Param | Type | Description |
+| --- | --- | --- |
+| namespace | <code>string</code> | eg /v1 |
 
 <a name="setMiddleware"></a>
 ## setMiddleware(middleware) ⇒ <code>boolean</code>
