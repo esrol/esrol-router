@@ -1,7 +1,7 @@
 {
   "name": "esrol-router",
   "description": "You can create new routes, set allowed ways of reaching them, handle requests, get information regarding those routes, and set middleware.",
-  "version": "0.0.5",
+  "version": "0.1.5",
   "main": "index.js",
   "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "repository": {
