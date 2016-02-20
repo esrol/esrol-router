@@ -144,15 +144,16 @@ describe('Api Success...', () => {
 
   describe('Testing query params object', () => {
 
-    let des = '"onRequest" for multiple records "/query-params?name=foo&ages=bar';
+    let des = '"onRequest" for multiple records "/query-params?name=foo%20name&ages=bar';
     describe(des, () => {
-      it('Should return object "{name: "foo", ages: "bar"}"', () => {
+      it('Should return object "{name: "foo name", ages: "bar"}"', () => {
         let req = mocks.requests.simpleRequest;
         let res = mocks.responses.simpleResponse;
-        req.url = '/query-params?name=foo&ages=bar';
+        req.url = '/query-params?name=foo%20name&ages=bar';
         let result = router.onRequest(req, res);
+        console.log (result)
         expect(result).to.be.an('object');
-        expect(result.name).to.equal('foo');
+        expect(result.name).to.equal('foo name');
         expect(result.ages).to.equal('bar');
       });
     });
