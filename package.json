@@ -1,7 +1,7 @@
 {
   "name": "esrol-router",
   "description": "You can create new routes, set allowed ways of reaching them, handle requests, get information regarding those routes, and set middleware.",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "main": "index.js",
   "author": "Ivaylo Ivanov <ivaylo.ivanov.ipi@gmail.com>",
   "repository": {
@@ -30,16 +30,14 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
-    "errors": "^0.3.0",
-    "esrol-errors": "^0.3.4",
-    "parseurl": "^1.3.0",
-    "request": "^2.67.0"
+    "parseurl": "^1.3.0"
   },
   "devDependencies": {
     "debug": "^2.2.0",
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.1",
     "chai": "^3.4.0",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "request": "^2.67.0"
   }
 }
